@@ -94,7 +94,25 @@ graph LR
 
 **Search Tree**
 
-* I don't know if mermaid can work here as well
+```mermaid
+graph TD 
+  Nairobi --> MaiMahiu[Mai Mahiu]
+  MaiMahiu --> Naivasha
+  MaiMahiu --> Narok
+  Naivasha --> Gilgil
+  Gilgil --> Nakuru
+  Nakuru --> Kericho
+  Nakuru --> Londiani
+  Kericho --> Kisumu
+  Londiani --> Kapsabet
+  Kapsabet --> Kondele
+  Kondele --> Kisumu
+  Narok --> Bomet
+  Bomet --> Kisii
+  Kisii --> HomaBay[Homa Bay]
+  HomaBay --> Kisumu
+
+```
 
 <hr>
 
