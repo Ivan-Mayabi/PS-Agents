@@ -15,7 +15,24 @@
 
 **Directed Graph**
 
-* You can check out using mermaid to do this
+```mermaid
+graph LR
+  Nairobi -->|55.6 km| MaiMahiu[Mai Mahiu]
+  MaiMahiu -->|34.8 km| Naivasha
+  MaiMahiu -->|89.1 km| Narok
+  Naivasha -->|30.4 km| Gilgil
+  Gilgil -->|42 km| Nakuru
+  Nakuru -->|107 km| Kericho
+  Nakuru -->|64.9 km| Londiani
+  Kericho -->|84 km| Kisumu
+  Londiani -->|116 km| Kapsabet
+  Kapsabet -->|47.8 km| Kondele
+  Kondele -->|32 km| Kisumu
+  Narok -->|81 km| Bomet
+  Bomet -->|92.1 km| Kisii
+  Kisii -->|108 km| HomaBay[Homa Bay]
+  HomaBay -->|108 km| Kisumu
+```
 
 **Search Tree**
 
