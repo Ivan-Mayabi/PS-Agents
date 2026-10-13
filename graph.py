@@ -77,6 +77,23 @@ class directed_graph:
         self.add_edge("Rongai", "Molo", "73m", "46.7km")
         self.add_edge("Nakuru", "Rongai", "58m", "33.2km")
 
+    def simple_build(self):
+        self.add_edge("Nairobi", "Mai Mahiu", "91m", "55.6 km")
+        self.add_edge("Mai Mahiu", "Naivasha", "44m", "34.8 km")
+        self.add_edge("Mai Mahiu", "Narok", "91m", "89.1 km")
+        self.add_edge("Naivasha", "Gilgil", "39m", "30.4 km")
+        self.add_edge("Gilgil", "Nakuru", "61m", "42 km")
+        self.add_edge("Nakuru", "Kericho", "139m", "107 km")
+        self.add_edge("Nakuru", "Londiani", "97m", "64.9 km")
+        self.add_edge("Kericho", "Kisumu", "100m", "84 km")
+        self.add_edge("Londiani", "Kapsabet", "139m", "116 km")
+        self.add_edge("Kapsabet", "Kondele", "64m", "47.8 km")
+        self.add_edge("Kondele", "Kisumu", "59m", "32 km")
+        self.add_edge("Narok", "Bomet", "87m", "81 km")
+        self.add_edge("Bomet", "Kisii", "104m", "92.1 km")
+        self.add_edge("Kisii", "Homa Bay", "72m", "108 km")
+        self.add_edge("Homa Bay", "Kisumu", "124m", "108 km")
+
     def dijkstras(self,start_node):
         distances = {towns:float('inf') for towns in self.adjacent}
         distances[start_node] = 0
@@ -111,6 +128,14 @@ class directed_graph:
         return distances[end_node],path
 
 NaiToKis = directed_graph()
+NaiToKis.simple_build()
+shortest_path,path = NaiToKis.get_shortest_path('Nairobi','Kisumu')
+# print("Shortest path time is "+str(shortest_path/60)+" hours.")
+print("Shortest path distance is "+str(shortest_path)+" km.")
+print("Path followed is:")
+print(path)
+
+NaiToKis.adjacent={}
 NaiToKis.build()
 shortest_path,path = NaiToKis.get_shortest_path('Nairobi','Kisumu')
 # print("Shortest path time is "+str(shortest_path/60)+" hours.")
