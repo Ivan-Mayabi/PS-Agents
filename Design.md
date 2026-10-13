@@ -13,7 +13,7 @@
 
 # **Question 2**
 
-**Directed Graph 1**
+**Directed Graph 1 - Compact**
 
 ```mermaid
 graph LR
@@ -34,7 +34,7 @@ graph LR
   HomaBay -->|124m, 108 km| Kisumu
 ```
 
-**Directed Graph 2**
+**Directed Graph 2 - Stay on Trunk Roads**
 ```mermaid
 graph LR
   Nairobi -->|26m, 16.3km| Githurai
@@ -92,25 +92,72 @@ graph LR
 ```
 
 
-**Search Tree**
+**Search Tree 1 - Compact**
 
 ```mermaid
-graph TD 
+graph TD
   Nairobi --> MaiMahiu[Mai Mahiu]
-  MaiMahiu --> Naivasha
-  MaiMahiu --> Narok
-  Naivasha --> Gilgil
-  Gilgil --> Nakuru
-  Nakuru --> Kericho
-  Nakuru --> Londiani
-  Kericho --> Kisumu
-  Londiani --> Kapsabet
-  Kapsabet --> Kondele
-  Kondele --> Kisumu
-  Narok --> Bomet
-  Bomet --> Kisii
+  MaiMahiu --> Naivasha[Naivasha]
+  MaiMahiu --> Narok[Narok]
+  Naivasha --> Gilgil[Gilgil]
+  Gilgil --> Nakuru[Nakuru]
+  Nakuru --> Kericho[Kericho]
+  Nakuru --> Londiani[Londiani]
+  Kericho --> Kisumu1[Kisumu]
+  Londiani --> Kapsabet[Kapsabet]
+  Kapsabet --> Kondele[Kondele]
+  Kondele --> Kisumu2[Kisumu]
+  Narok --> Bomet[Bomet]
+  Bomet --> Kisii[Kisii]
   Kisii --> HomaBay[Homa Bay]
-  HomaBay --> Kisumu
+  HomaBay --> Kisumu3[Kisumu]
+
+```
+
+**Search Tree 2 - Stay on Trunk Roads**
+```mermaid
+graph TD
+  Nairobi --> Githurai
+  Githurai --> Ruiru
+  Ruiru --> Juja
+  Juja --> Thika
+  
+  Thika --> Othaya
+  Thika --> Sagana
+  Thika --> Wang_uru["Wang'uru"]
+  
+  Othaya --> Nyeri1["Nyeri"]
+  Sagana --> Karatina --> Nyeri2["Nyeri"]
+  Wang_uru --> Kutus --> Embu --> Chuka --> Chogoria --> Igoji --> Nkubu --> Meru --> Nanyuki --> Nyeri3["Nyeri"]
+  
+  Nyeri1 --> Muiga1["Muiga"] --> Ndaragwa1["Ndaragwa"] --> Nyahururu1["Nyahururu"]
+  Nyeri2 --> Muiga2["Muiga"] --> Ndaragwa2["Ndaragwa"] --> Nyahururu2["Nyahururu"]
+  Nyeri3 --> Muiga3["Muiga"] --> Ndaragwa3["Ndaragwa"] --> Nyahururu3["Nyahururu"]
+  
+  Nyahururu1 --> Bahati1["Bahati"] --> Nakuru1["Nakuru"]
+  Nyahururu1 --> Dondori1["Dondori"] --> Nakuru2["Nakuru"]
+  
+  Nyahururu2 --> Bahati2["Bahati"] --> Nakuru3["Nakuru"]
+  Nyahururu2 --> Dondori2["Dondori"] --> Nakuru4["Nakuru"]
+  
+  Nyahururu3 --> Bahati3["Bahati"] --> Nakuru5["Nakuru"]
+  Nyahururu3 --> Dondori3["Dondori"] --> Nakuru6["Nakuru"]
+  
+  Nairobi --> MaiMahiu["Mai Mahiu"]
+  MaiMahiu --> Karagita --> Naivasha --> Gilgil --> Nakuru7["Nakuru"]
+  
+  Nakuru1 --> Rongai1["Rongai"] --> Molo1["Molo"] --> Londiani1["Londiani"] --> Kericho1["Kericho"] --> Kapsoit1["Kapsoit"] --> Muhoroni1["Muhoroni"] --> Ahero1["Ahero"] --> Kisumu1["Kisumu"]
+  Nakuru2 --> Rongai2["Rongai"] --> Molo2["Molo"] --> Londiani2["Londiani"] --> Kericho2["Kericho"] --> Kapsoit2["Kapsoit"] --> Muhoroni2["Muhoroni"] --> Ahero2["Ahero"] --> Kisumu2["Kisumu"]
+  Nakuru3 --> Rongai3["Rongai"] --> Molo3["Molo"] --> Londiani3["Londiani"] --> Kericho3["Kericho"] --> Kapsoit3["Kapsoit"] --> Muhoroni3["Muhoroni"] --> Ahero3["Ahero"] --> Kisumu3["Kisumu"]
+  Nakuru4 --> Rongai4["Rongai"] --> Molo4["Molo"] --> Londiani4["Londiani"] --> Kericho4["Kericho"] --> Kapsoit4["Kapsoit"] --> Muhoroni4["Muhoroni"] --> Ahero4["Ahero"] --> Kisumu4["Kisumu"]
+  Nakuru5 --> Rongai5["Rongai"] --> Molo5["Molo"] --> Londiani5["Londiani"] --> Kericho5["Kericho"] --> Kapsoit5["Kapsoit"] --> Muhoroni5["Muhoroni"] --> Ahero5["Ahero"] --> Kisumu5["Kisumu"]
+  Nakuru6 --> Rongai6["Rongai"] --> Molo6["Molo"] --> Londiani6["Londiani"] --> Kericho6["Kericho"] --> Kapsoit6["Kapsoit"] --> Muhoroni6["Muhoroni"] --> Ahero6["Ahero"] --> Kisumu6["Kisumu"]
+  Nakuru7 --> Rongai7["Rongai"] --> Molo7["Molo"] --> Londiani7["Londiani"] --> Kericho7["Kericho"] --> Kapsoit7["Kapsoit"] --> Muhoroni7["Muhoroni"] --> Ahero7["Ahero"] --> Kisumu7["Kisumu"]
+  
+  MaiMahiu --> Ntulelei --> Narok --> Bomet --> Keroka --> Keumbu --> Kisii
+  
+  Kisii --> Rongo1["Rongo"] --> HomaBay1["Homa Bay"] --> KenduBay1["Kendu Bay"] --> Ahero8["Ahero"] --> Kisumu8["Kisumu"]
+  Kisii --> Oyugis1["Oyugis"] --> Sondu1["Sondu"] --> Ahero9["Ahero"] --> Kisumu9["Kisumu"]
 
 ```
 
