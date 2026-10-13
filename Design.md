@@ -257,7 +257,7 @@ print(path)
 * None of the code is copied directed from an AI and can be explained upon request.
 * The final output of the program is:
 
-```
+```bash
 Shortest path distance is 416.6 km.
 
 Path followed is:
@@ -266,7 +266,7 @@ Path followed is:
 
 * If edited to prioritise time:
 
-```
+```bash
 Shortest path distance is 8.05 hours.
 
 Path followed is:
@@ -274,6 +274,24 @@ Path followed is:
 ```
 
 * The path's followed remains the same either way
+
+* If using the direct towns to towns measure
+
+```bash
+Shortest path distance is 353.8 km.
+
+Path followed is:
+['Nairobi', 'Mai Mahiu', 'Naivasha', 'Gilgil', 'Nakuru', 'Kericho', 'Kisumu']
+```
+
+* If using time to measure
+
+```bash
+Shortest path time is 7.9 hours.
+
+Path followed is:
+['Nairobi', 'Mai Mahiu', 'Naivasha', 'Gilgil', 'Nakuru', 'Kericho', 'Kisumu']
+```
 
 <hr>
 
