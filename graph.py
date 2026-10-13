@@ -89,7 +89,8 @@ class directed_graph:
                 continue
 
             for neighbor,time,distance_between in self.adjacent[current_town]:
-                distance = current_distance + float(time[:-1])
+                # distance = current_distance + float(time[:-1])
+                distance = current_distance + float(distance_between[:-2])
 
                 if distance < distances[neighbor]:
                     distances[neighbor] = distance
@@ -112,6 +113,7 @@ class directed_graph:
 NaiToKis = directed_graph()
 NaiToKis.build()
 shortest_path,path = NaiToKis.get_shortest_path('Nairobi','Kisumu')
-print("Shortest path distance is "+str(shortest_path/60)+" hours.")
+# print("Shortest path time is "+str(shortest_path/60)+" hours.")
+print("Shortest path distance is "+str(shortest_path)+" km.")
 print("Path followed is:")
 print(path)
