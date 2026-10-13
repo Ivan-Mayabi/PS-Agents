@@ -2,9 +2,8 @@
 
 # **Question 1**
 
-**PEAS Framework for self driving trailer**
+### **PEAS Framework for self driving trailer**
 
-* These are the ones i think about👍️👍️
 * Performance Element - Distance Covered, Fuel Consumption, Time taken (Goal is to minimise them)
 * Environment - The Kenyan Roads
 * Actuators - Motors
@@ -125,6 +124,7 @@ class directed_graph:
                 continue
 
             for neighbor,time,distance_between in self.adjacent[current_town]:
+                # distance = current_distance + float(time[:-1])
                 distance = current_distance + float(distance_between[:-2])
 
                 if distance < distances[neighbor]:
@@ -148,6 +148,7 @@ class directed_graph:
 NaiToKis = directed_graph()
 NaiToKis.build()
 shortest_path,path = NaiToKis.get_shortest_path('Nairobi','Kisumu')
+# print("Shortest path time is "+str(shortest_path/60)+" hours.")
 print("Shortest path distance is "+str(shortest_path)+" km.")
 print("Path followed is:")
 print(path)
