@@ -363,4 +363,9 @@ Path followed is:
 # TeamWork Proof
 
 * Image taken
-[!](https://www.google.com/)
+
+<!-- Gemini was used to find out how to do this, it was too complex -->
+
+<img src="https://lh3.googleusercontent.com/d/1bGOkA4ieM1Y7gVeR4g3pxUl9KSW9B3vS" alt="Group Image" width="500px">
+
+<!-- ![Group Image](https://lh3.googleusercontent.com/d/1bGOkA4ieM1Y7gVeR4g3pxUl9KSW9B3vS) -->
