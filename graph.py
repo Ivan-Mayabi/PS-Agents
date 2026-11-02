@@ -187,23 +187,59 @@ class directed_graph:
 
         return distances[end_node],path
 
+    def uniform_cost_search(self,start_node,end_node):
+        # Generate the look up table, will always look it up and select what is next based off of this
+        look_up = [(0,start_node,[start_node])]
+        round=0
+        all_paths_to_end = []
+
+        # Access all the paths in the look up table and select the one that has the least cost
+        while look_up:
+            # Get the path with the least cost
+            top = heapq.heappop(look_up)
+            distance = top[0]
+
+            # For all the neighbours to the current last visited node, add the distance and add it to the paths that can be followed
+            for neighbour,time,distance_between in self.adjacent[top[1]]:
+                distance += float(distance_between[:-3])
+                path = top[2].copy()
+                path.append(neighbour)
+                # Do not add an item to the look up list if it's neighbour has no neighbours and the neighbour is not the end_node (i.e if you can't traverse from the neighbour, no point in adding it)
+                if len(self.adjacent[neighbour])==0 and neighbour!=end_node:
+                    continue
+                heapq.heappush(look_up,(distance,neighbour,path))
+
+            # If top has a path to the required node, add to the "all paths to end list"
+            if top[2][-1]==end_node:
+                all_paths_to_end.append(top)  
+
+        return heapq.heappop(all_paths_to_end)
+
 
 """
 This section executes everything and allows us to derive the results we wanted.
 It shows the shortest paths as well as the times if uncommented (Saw that we were supposed to only include distances but had already spent time checking times)
 """
+# if __name__=="main":
 NaiToKis = directed_graph()
 NaiToKis.simple_build()
-shortest_path,path = NaiToKis.get_shortest_path('Nairobi','Kisumu')
-# print("Shortest path time is "+str(shortest_path/60)+" hours.")
-print("Shortest path distance is "+str(shortest_path)+" km.")
-print("Path followed is:")
-print(path)
+# shortest_path,path = NaiToKis.get_shortest_path('Nairobi','Kisumu')
+# # print("Shortest path time is "+str(shortest_path/60)+" hours.")
+# print("Shortest path distance is "+str(shortest_path)+" km.")
+# print("Path followed is:")
+# print(path)
+# print(NaiToKis.uniform_cost_search("Nairobi"))
+# pprint.pprint(NaiToKis.adjacent)
+Path = NaiToKis.uniform_cost_search('Nairobi','Kisumu')
+print("Distance to End = "+str(Path[0]))
+print("Paths followed to End = "+str(Path[2]))
 
-NaiToKis.adjacent={}
-NaiToKis.build()
-shortest_path,path = NaiToKis.get_shortest_path('Nairobi','Kisumu')
+
+# NaiToKis.adjacent={}
+# NaiToKis.build()
+# shortest_path,path = NaiToKis.get_shortest_path('Nairobi','Kisumu')
 # print("Shortest path time is "+str(shortest_path/60)+" hours.")
-print("Shortest path distance is "+str(shortest_path)+" km.")
-print("Path followed is:")
-print(path)
+# print("Shortest path distance is "+str(shortest_path)+" km.")
+# print("Path followed is:")
+# print(path)
+
